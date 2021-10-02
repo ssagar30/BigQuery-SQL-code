@@ -1,0 +1,33 @@
+SELECT 
+  purchase_price
+FROM 
+  customer_data.customer_purchase
+ORDER BY purchase_price DESC;
+
+
+SELECT 
+    CAST(purchase_price AS FLOAT64)
+FROM 
+    customer_data.customer_purchase
+    purchase
+ORDER BY 
+    CAST(purchase_price AS FLOAT64) DESC;
+    
+    
+SELECT
+    CAST(date AS date) AS date, purchase_price
+FROM 
+    customer_data.customer_purchase
+WHERE 
+    date 
+BETWEEN '2020-12-01' AND '2020-12-31';
+
+SELECT 
+    customer_id,
+CASE 
+    WHEN first_name = 'Tnoy' THEN 'Tony'
+    WHEN first_name = 'Tmo' THEN 'Tom'
+    ELSE first_name 
+    END AS cleaned_name
+FROM 
+    `customer-project-324817.customer_data.customer_purchase`;
